@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'theme.dart';
 
 void main() => runApp(new MyApp());
 
@@ -54,6 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: new Column(
         children: <Widget>[
           // seek bar
+          new Expanded(
+            child: new Container(),
+          ),
 
           // visualizer
           new Container(
@@ -63,7 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // song title, artist name, controls
           new Container(
-            color: Colors.black,
+            color: accentColor,
+            padding: const EdgeInsets.only(top: 48.0, bottom:50.0),
             child: new Column(
               children: <Widget>[
                 new RichText(
@@ -92,11 +97,62 @@ class _MyHomePageState extends State<MyHomePage> {
                     ]
                   ),
                 ),
-                new Row(
-                  children: <Widget>[
+                new Padding(
+                  padding: const EdgeInsets.only(top:40.0),
+                  child: new Row(
+                    children: <Widget>[
+                      new Expanded(child: new Container()),
 
-                  ],
-                )
+                      new IconButton(
+                        icon: new Icon(
+                          Icons.skip_previous,
+                          color: Colors.white,
+                          size: 35.0,
+                        ),
+                        onPressed: () {
+                          // TODO
+                        },
+                      ),
+
+                      new Expanded(child: new Container()),
+
+                      new RawMaterialButton(
+                        shape: new CircleBorder(),
+                        fillColor: Colors.white,
+                        splashColor: lightAccentColor,
+                        highlightColor: lightAccentColor.withOpacity(0.5),
+                        elevation: 10.0,
+                        highlightElevation: 5.0,
+                        onPressed: () {
+                          // TODO
+                        },
+                        child: new Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: new Icon(
+                            Icons.play_arrow,
+                            color: darkAccentColor,
+                            size: 35.0,
+                          ),
+                        ),
+                      ),
+
+                      new Expanded(child: new Container()),
+                      
+                      new IconButton(
+                        icon: new Icon(
+                          Icons.skip_next,
+                          color: Colors.white,
+                          size: 35.0,
+                        ),
+                        onPressed: () {
+                          // TODO
+                        },
+                      ),
+                      
+                      new Expanded(child: new Container()),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
